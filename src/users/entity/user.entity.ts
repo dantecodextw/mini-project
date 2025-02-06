@@ -7,7 +7,8 @@ export class User {
 
     @Column({
         type: "varchar",
-        length: 25
+        length: 25,
+        unique: true
     })
     name: string
 
@@ -17,7 +18,8 @@ export class User {
     age: number
 
     @Column({
-        type: "boolean"
+        type: "boolean",
+        nullable: false
     })
     isMarried: boolean
 

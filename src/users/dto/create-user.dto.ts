@@ -1,14 +1,14 @@
-import { IsBoolean, IsNumber, IsString, Max, MaxLength, MinLength } from "class-validator"
+import { IsBoolean, IsIn, IsInt, IsNumber, IsOptional, IsString, Max, MaxLength, Min, MinLength } from "class-validator"
 
 export class CreateUserDto {
     @IsString()
-    @MinLength(10)
+    @MinLength(3)
     @MaxLength(25)
     name: string
 
-    @IsNumber()
-    @MaxLength(150)
-    @MinLength(1)
+    @IsInt()
+    @Max(150)
+    @Min(1)
     age: number
 
     @IsBoolean()
