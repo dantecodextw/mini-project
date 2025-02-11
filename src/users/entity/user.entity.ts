@@ -8,20 +8,37 @@ export class User {
     @Column({
         type: "varchar",
         length: 25,
-        unique: true
+        unique: true,
+        nullable: false
     })
     name: string
 
     @Column({
-        type: "integer",
-    })
-    age: number
-
-    @Column({
-        type: "boolean",
+        type: "varchar",
+        length: 25,
+        unique: true,
         nullable: false
     })
-    isMarried: boolean
+    username: string
+
+    @Column({
+        type: "varchar",
+        unique: true,
+        nullable: false
+    })
+    email: string
+
+    @Column({
+        type: "varchar",
+        nullable: false,
+    })
+    password: string
+
+    @Column({
+        type: "timestamp",
+        nullable: true
+    })
+    passwordResetAt: Date
 
     @CreateDateColumn()
     createdAt: Date

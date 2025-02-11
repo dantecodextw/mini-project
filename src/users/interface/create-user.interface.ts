@@ -1,11 +1,3 @@
-interface createUser {
-    id: number,
-    name: string,
-    age: number,
-    isMarried: boolean,
-    createdAt: Date,
-    updatedAt: Date,
-    deletedAt?: Date
-}
+import { User } from "../entity/user.entity"
 
-export default createUser
+export type createUser = Omit<User, 'password'>

@@ -1,16 +1,36 @@
-import { IsBoolean, IsIn, IsInt, IsNumber, IsOptional, IsString, Max, MaxLength, Min, MinLength } from "class-validator"
+import { IsString, IsEmail, MinLength, MaxLength, IsOptional, IsDate } from "class-validator";
 
 export class CreateUserDto {
     @IsString()
     @MinLength(3)
     @MaxLength(25)
-    name: string
+    name: string;
 
-    @IsInt()
-    @Max(150)
-    @Min(1)
-    age: number
+    @IsString()
+    @MinLength(3)
+    @MaxLength(25)
+    username: string;
 
-    @IsBoolean()
-    isMarried: boolean
+    @IsEmail()
+    email: string;
+
+    @IsString()
+    @MinLength(6)
+    password: string;
+
+    @IsOptional()
+    @IsDate()
+    passwordResetAt?: Date;
+
+    @IsOptional()
+    @IsDate()
+    createdAt?: Date;
+
+    @IsOptional()
+    @IsDate()
+    updatedAt?: Date;
+
+    @IsOptional()
+    @IsDate()
+    deletedAt?: Date;
 }
